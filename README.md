@@ -1,21 +1,26 @@
 # QtSide
 Wrap PyQt4 PyQt5 PySide PySide2 together.
 
+#
 ### INSTALLATION
-1. Download the latest release and unzip the folder with name 'QtSide' where you want to live.
+1. Download the latest release and unzip to a folder with the name '**QtSide**' where you want to live.
 2. Add parent folder to the **_PYTHONPATH_** env var.
 
 ### HOW DOES IT WORK
+QtSide replaces itself with whatever Python binding is available (or preferred) in the Python environment your script runs in. 
+However, QtSide will first take care of remappings of calls so that the Qt5 style syntax of PySide2 will work even if you run 
+this code in an environment with a Python binding for Qt4.
+
 #### Environment variables.
-* **QT_SIDE_BINDING**
-* **QT_SIDE_PYQT4_DIR**
-* **QT_SIDE_PYQT5_DIR**
-* **QT_SIDE_PYSIDE_DIR**
-* **QT_SIDE_PYSIDE2_DIR**
+* **_QT_SIDE_BINDING_**
+* **_QT_SIDE_PYQT4_DIR_**
+* **_QT_SIDE_PYQT5_DIR_**
+* **_QT_SIDE_PYSIDE_DIR_**
+* **_QT_SIDE_PYSIDE2_DIR_**
 
 Before open your custom apps or vfx-dccs, you need to set these environment variable first.
-- You need tell QtSide which binding to prefer by setting the **QT_SIDE_BINDING** environment variable.
-- You need tell QtSide prefer-binding's folder locations by setting the **QT_SIDE_\*_DIR** environment variable.
+- You need tell QtSide which binding to prefer by setting the **_QT_SIDE_BINDING_** environment variable.
+- You need tell QtSide prefer-binding's folder locations by setting the **_QT_SIDE\_\*\_DIR_** environment variable.
 
 #### For example:
 ```
@@ -65,4 +70,13 @@ button.setMinimumSize(QtCore.QSize(0, 22))
 button.setMaximumSize(QtCore.QSize(168, 22))
 button.show()
 app.exec_()
+```
+
+```python
+from QtSide import QtWidgets, ui_wrapper
+import maya.OpenMayaUI as OpenMayaUI
+connector = ui_wrapper.wrapinstance(
+    long(OpenMayaUI.MQtUtil.mainWindow()),
+    QtWidgets.QMainWindow
+)
 ```
