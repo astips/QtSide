@@ -1,7 +1,6 @@
 # QtSide
 Wrap PyQt4 PyQt5 PySide PySide2 together.
 
-#
 ### INSTALLATION
 1. Download the latest release and unzip to a folder with the name '**QtSide**' where you want to live.
 2. Add parent folder to the **_PYTHONPATH_** env var.
@@ -43,7 +42,7 @@ Maya 2017 with PyQt5
     export QT_SIDE_BINDING=pyqt5
     export QT_SIDE_PYQT5_DIR=/mnt/mount/lib/pyqt5_parent_folder  # ignore this if PyQt5 package already setted into PYTHONPATH or sys.path
 - windows:
-    set QT_SIDE_BINDING=pyqt4
+    set QT_SIDE_BINDING=pyqt5
     set QT_SIDE_PYQT5_DIR=c:/mount/lib/pyqt5_parent_folder  # ignore this if PyQt5 package already setted into PYTHONPATH or sys.path
 
 Maya 2017 with PySide2
@@ -73,6 +72,7 @@ app.exec_()
 ```
 
 ```python
+# VFX DCC - Maya
 from QtSide import QtWidgets, ui_wrapper
 import maya.OpenMayaUI as OpenMayaUI
 connector = ui_wrapper.wrapinstance(
