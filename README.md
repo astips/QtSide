@@ -26,10 +26,10 @@ Before open your custom apps or vfx-dccs, you need to set these environment vari
 Maya 2016 with PyQt4
 - linux:
     export QT_SIDE_BINDING=pyqt4
-    export QT_SIDE_PYQT4_DIR=/mnt/mount/lib/pyqt4_parent_folder  # ignore this if PyQt4 package already setted into PYTHONPATH or sys.path
+    export QT_SIDE_PYQT4_DIR=/mnt/mount/lib/pyqt4_parent_folder  # ignore this if PyQt4 package already exists in PYTHONPATH/sys.path
 - windows:
     set QT_SIDE_BINDING=pyqt4
-    set QT_SIDE_PYQT4_DIR=c:/mount/lib/pyqt4_parent_folder  # ignore this if PyQt4 package already setted into PYTHONPATH or sys.path
+    set QT_SIDE_PYQT4_DIR=c:/mount/lib/pyqt4_parent_folder  # ignore this if PyQt4 package already exists in PYTHONPATH/sys.path
 
 Maya 2016 with PySide
 - linux:
