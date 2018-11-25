@@ -30,3 +30,18 @@ class QtModifier(object):
                     raise AttributeError('{0} do not have attribute {1}'.format(current_name, name))
                 current_name = '.'.join([current_name, name])
             setattr(module, name_list[-1], function)
+
+
+def qt_modifier(binding='pyqt4'):
+    binding = binding.lower()
+    if binding == 'pyqt4':
+        from .modifier_pyqt4 import qt_modifier
+    elif binding == 'pyqt5':
+        from .modifier_pyqt5 import qt_modifier
+    elif binding == 'pyside':
+        from .modifier_pyside import qt_modifier
+    elif binding == 'pyside2':
+        from .modifier_pyside2 import qt_modifier
+    else:
+        raise Exception('Invalid binding: {0}'.format(binding))
+    return qt_modifier

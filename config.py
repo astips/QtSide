@@ -8,7 +8,8 @@ __all__ = [
     'QT_SIDE_PYQT4_DIR',
     'QT_SIDE_PYQT5_DIR',
     'QT_SIDE_PYSIDE_DIR',
-    'QT_SIDE_PYSIDE2_DIR'
+    'QT_SIDE_PYSIDE2_DIR',
+    'MEMBER_JSON_FILE'
 ]
 
 QT_SIDE_BINDING = os.environ.get('QT_SIDE_BINDING')
@@ -22,3 +23,5 @@ QT_SIDE_PYQT4_DIR = os.getenv('QT_SIDE_PYQT4_DIR')
 QT_SIDE_PYQT5_DIR = os.getenv('QT_SIDE_PYQT5_DIR')
 QT_SIDE_PYSIDE_DIR = os.getenv('QT_SIDE_PYSIDE_DIR')
 QT_SIDE_PYSIDE2_DIR = os.getenv('QT_SIDE_PYSIDE2_DIR')
+
+MEMBER_JSON_FILE = os.path.join(os.path.dirname(__file__), 'member.json')
