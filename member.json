@@ -453,7 +453,8 @@
         "qsrand",
         "pyqtProperty",
         "pyqtSignal",
-        "pyqtSlot"
+        "pyqtSlot",
+        "SIGNAL"
     ],
     "QtXml": [
         "QDomAttr",
