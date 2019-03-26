@@ -57,6 +57,16 @@ def setItemHidden(self, QTreeWidgetItem, bool):
     QTreeWidgetItem.setHidden(bool)
 
 
+@qt_modifier.register("QtWidgets.QHeaderView.setClickable")
+def setClickable(self, bool):
+    QtWidgets.QHeaderView.setSectionsClickable(self, bool)
+
+
+@qt_modifier.register("QtWidgets.QHeaderView.setResizeMode")
+def setResizeMode(self, mode):
+    QtWidgets.QHeaderView.setSectionResizeMode(self, mode)
+
+
 original_set_focus_policy = QtWidgets.QWidget.setFocusPolicy
 
 

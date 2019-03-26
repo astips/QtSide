@@ -454,7 +454,8 @@
         "pyqtProperty",
         "pyqtSignal",
         "pyqtSlot",
-        "SIGNAL"
+        "SIGNAL",
+        "SLOT"
     ],
     "QtXml": [
         "QDomAttr",
