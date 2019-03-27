@@ -27,7 +27,7 @@ def unwrapinstance(*args, **kwargs):
 
 @qt_modifier.register('QtWidgets.QTreeWidgetItem.setBackgroundColor')
 def setBackgroundColor(self, p_int, QColor):
-    QtWidgets.QTreeWidgetItem.setBackgroundColor(self, p_int, QColor)
+    QtWidgets.QTreeWidgetItem.setBackground(self, p_int, QColor)
 
 
 @qt_modifier.register('QtWidgets.QTreeWidgetItem.setTextColor')
@@ -37,7 +37,7 @@ def setTextColor(self, p_int, QColor):
 
 @qt_modifier.register('QtWidgets.QTableWidgetItem.setBackgroundColor')
 def setBackgroundColor(self, QColor):
-    QtWidgets.QTableWidgetItem.setBackgroundColor(self, QColor)
+    QtWidgets.QTableWidgetItem.setBackground(self, QColor)
 
 
 @qt_modifier.register("QtWidgets.QTableWidgetItem.setTextColor")
@@ -58,3 +58,8 @@ def delta(self):
 @qt_modifier.register("QtGui.QDrag.start")
 def start(self, supportedActions=None):
     QtGui.QDrag.exec_(self, supportedActions)
+
+
+@qt_modifier.register("QtWidgets.QColorDialog.set_custom_color")
+def set_custom_color(self, index, color):
+    QtWidgets.QColorDialog.setCustomColor(index, color)
