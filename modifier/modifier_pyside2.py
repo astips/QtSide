@@ -67,6 +67,11 @@ def setResizeMode(self, mode):
     QtWidgets.QHeaderView.setSectionResizeMode(self, mode)
 
 
+@qt_modifier.register("QtWidgets.QColorDialog.set_custom_color")
+def set_custom_color(self, index, color):
+    QtWidgets.QColorDialog.setCustomColor(index, color)
+
+
 original_set_focus_policy = QtWidgets.QWidget.setFocusPolicy
 
 

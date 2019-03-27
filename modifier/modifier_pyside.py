@@ -55,6 +55,11 @@ def setTextColor(self, p_int, QColor):
     QtGui.QTreeWidgetItem.setForeground(self, p_int, QColor)
 
 
+@qt_modifier.register("QtWidgets.QColorDialog.set_custom_color")
+def set_custom_color(self, index, color):
+    QtGui.QColorDialog.setCustomColor(index, color.rgb())
+
+
 original_set_focus_policy = QtGui.QWidget.setFocusPolicy
 
 
