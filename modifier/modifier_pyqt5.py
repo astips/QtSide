@@ -60,6 +60,16 @@ def start(self, supportedActions=None):
     QtGui.QDrag.exec_(self, supportedActions)
 
 
+@qt_modifier.register("QtWidgets.QHeaderView.setClickable")
+def setClickable(self, bool):
+    QtWidgets.QHeaderView.setSectionsClickable(self, bool)
+
+
+@qt_modifier.register("QtWidgets.QHeaderView.setResizeMode")
+def setResizeMode(self, mode):
+    QtWidgets.QHeaderView.setSectionResizeMode(self, mode)
+
+
 @qt_modifier.register("QtWidgets.QColorDialog.set_custom_color")
 def set_custom_color(self, index, color):
     QtWidgets.QColorDialog.setCustomColor(index, color)

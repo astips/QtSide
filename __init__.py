@@ -11,10 +11,14 @@ Usage:
 """
 
 __package__ = 'QtSide'
-__version__ = '1.0.0'
+__version__ = '1.0.2'
 
+import logging
 import sys
 from .builder import setup
 
+logging.basicConfig(level=logging.INFO, format='%(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 setup(sys.modules[__name__])
